@@ -57,6 +57,9 @@ public class SecurityConfig {
     @Value("${app.backend.origin}")
     private String backendOrigin;
 
+    @Value("${app.dev-frontedn.origin")
+    private String devFrontendOrigin;
+
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http,
@@ -95,7 +98,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of(frontendOrigin, backendOrigin));
+        config.setAllowedOrigins(List.of(frontendOrigin, devFrontendOrigin, backendOrigin));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setExposedHeaders(List.of("Authorization"));
