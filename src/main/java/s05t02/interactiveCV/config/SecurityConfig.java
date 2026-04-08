@@ -57,7 +57,7 @@ public class SecurityConfig {
     @Value("${app.backend.origin}")
     private String backendOrigin;
 
-    @Value("${app.dev-frontedn.origin")
+    @Value("${app.dev-frontend.origin")
     private String devFrontendOrigin;
 
 
